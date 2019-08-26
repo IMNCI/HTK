@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetupActivity"
+    android:background="@color/colorPrimaryDark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+        <LinearLayout
+            android:id="@+id/downloadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:text="Downloading Content"/>
+            <ProgressBar
+                android:id="@+id/downloadProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:indeterminateTint="#FFFFFF"
+                tools:targetApi="lollipop" />
+
+            <TextView
+                android:id="@+id/downloading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Downloaing health talk kit"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/completedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/ic_check"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_gravity="center_horizontal"
+                android:tint="#FFF"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Download Complete!"
+                android:textColor="#FFF"
+                android:textSize="24sp"/>
+
+            <Button
+                android:id="@+id/proceed_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="PROCEED"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/spacing_xlarge"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:drawableTint="@android:color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/errorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/ic_warning"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_gravity="center_horizontal"
+                android:tint="#FFF"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="There was an error downloading the data. Please change your connection or report this issue on playstore"
+                android:textColor="#FFF"
+                android:textSize="18sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Retry"
+                android:id="@+id/retryBtn"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="@dimen/spacing_large"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="@string/app_name"/>
+    </RelativeLayout>
+
+</FrameLayout>
